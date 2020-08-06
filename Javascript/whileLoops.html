@@ -1,0 +1,80 @@
+<html>
+
+	<head>
+
+		<title>Javascript</title>
+		
+		</style>
+	</head>
+
+	<body>
+	
+		<p>How many Fingers are you holding up?</p>
+		
+		<select id="userInput">
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+		
+		<button id="EnterFingers">Enter</button>
+		
+		<script type="text/javascript">
+		
+			document.getElementById("EnterFingers").onclick = function() {
+				var userFingers = document.getElementById("userInput").value;
+				
+				if (userFingers.length == 0) {
+					alert("You must enter a number");
+				}
+				
+				var gotIt = false;
+				var i = 1;
+				var computerGuess = 0;
+				
+				while (gotIt == false) {
+					computerGuess = Math.floor(Math.random() * 6);
+					if (computerGuess == userFingers) {
+						gotIt = true;
+						alert("Got it! It took the computer " + i + " tries");
+					}
+					i++
+					
+					if (i > 20) {
+						alert("Loop Broken at twenty tries");
+						gotIt = true;
+					}
+					
+				}
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			/*
+			var tweets = ["Hi everyone", "Good morning", "I love cornflakes"];
+			
+			var i = 0; 
+			
+			while (i < tweets.length) {
+				document.getElementById("one").innerHTML = document.getElementById("one").innerHTML + "<br>" + tweets[i];
+				i++;
+			}
+			*/
+		</script>
+	</body>
+
+
+</html>
