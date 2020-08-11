@@ -1,0 +1,86 @@
+<html>
+
+	<head>
+
+		<title>Reaction Tester</title>
+		<style type="text/css">
+		
+			#time_box {
+				font-weight: bold;
+			}
+			
+			#circleSquareHolder {
+				height: 500px;
+				width: 100%;
+				border: 1px black solid;
+			}
+			
+			#target {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				position: relative;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1> Test Your Reactions!</h1>
+		<p>Click on the boxes and circles as quickly as you can!</p>
+		
+		<p id="time_box">Your time: </p>
+		
+		<div id="circleSquareHolder">
+		
+			<div id="target"> </div>
+		
+		</div>
+		
+		<script type="text/javascript">
+		
+			function randomColor() {
+				var letters = "0123456789ABCDEF";
+				var color = "#";
+				for (var i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return (color);
+			}
+			
+			function squareOrCircle() {
+				var choices = ["Square", "Circle"];
+				var selected = choices[Math.floor(Math.random() * 3)];
+				return (selected);
+			}
+			
+			function randomNumber(min, max) {
+				return (Math.random() * (max - min) + min);
+			}
+			
+			function instantiateShape() {
+				var timer = 0.0;
+				
+				document.getElementById("target").style.backgroundColor = randomColor;
+				
+				var widthHeight = Math.floor((Math.random() * 55) + 5);
+				divWidth = document.getElementById("circleSquareHolder").offsetWidth + "px";
+				divHeight = document.getElementById("circleSquareHolder").offsetHeight + "px";
+				
+				document.getElementById("target").style.width = widthHeight;
+				document.getElementById("target").style.height = widthHeight;
+				document.getElementById("target").style.top = randomNumber(0, divHeight);
+				document.getElementById("target").style.left = randomNumber(0, divWidth);
+				
+				
+				
+			}
+			
+			document.getElementById("target").onclick = instantiateShape();
+			
+		</script>
+		
+
+	</body>
+
+
+</html>

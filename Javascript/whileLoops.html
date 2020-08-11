@@ -24,6 +24,14 @@
 		
 		<script type="text/javascript">
 		
+			function doAGuess(correctAnswer) {
+				computerGuess = Math.floor(Math.random() * 6);
+					if (computerGuess == correctAnswer) {
+						return (true);
+					}
+
+			}
+		
 			document.getElementById("EnterFingers").onclick = function() {
 				var userFingers = document.getElementById("userInput").value;
 				
@@ -32,20 +40,15 @@
 				}
 				
 				var gotIt = false;
-				var i = 1;
-				var computerGuess = 0;
 				
 				while (gotIt == false) {
-					computerGuess = Math.floor(Math.random() * 6);
-					if (computerGuess == userFingers) {
+					if (doAGuess(userFingers) == true) {
 						gotIt = true;
-						alert("Got it! It took the computer " + i + " tries");
+						alert("Computer Guessed it! The answer was " + userFingers);
 					}
-					i++
 					
-					if (i > 20) {
-						alert("Loop Broken at twenty tries");
-						gotIt = true;
+					else {
+						
 					}
 					
 				}
