@@ -28,7 +28,7 @@
 		<h1> Test Your Reactions!</h1>
 		<p>Click on the boxes and circles as quickly as you can!</p>
 		
-		<p id="time_box">Your time: </p>
+		<p id="time_box">Your time: 0.00s</p>
 		
 		<div id="circleSquareHolder">
 		
@@ -37,7 +37,8 @@
 		</div>
 		
 		<script type="text/javascript">
-		
+			var start = new Date().getTime();
+			
 			function randomColor() {
 				var letters = "0123456789ABCDEF";
 				var color = "#";
@@ -48,7 +49,7 @@
 			}
 			
 			function squareOrCircle() {
-				var choices = ["Square", "Circle"];
+				var choices = ["0%", "50%"];
 				var selected = choices[Math.floor(Math.random() * 3)];
 				return (selected);
 			}
@@ -58,24 +59,30 @@
 			}
 			
 			function instantiateShape() {
-				var timer = 0.0;
+				var end = new Date().getTime();
 				
-				document.getElementById("target").style.backgroundColor = randomColor;
+				var timeTaken = ((end - start) / 1000).toFixed(2);
+				document.getElementById("time_box").innerHTML = "Your time: " + timeTaken + "s";
 				
-				var widthHeight = Math.floor((Math.random() * 55) + 5);
-				divWidth = document.getElementById("circleSquareHolder").offsetWidth + "px";
-				divHeight = document.getElementById("circleSquareHolder").offsetHeight + "px";
+				document.getElementById("target").style.backgroundColor = randomColor();
+				
+				var widthHeight = randomNumber(100, 300);
+				divWidth = document.getElementById("circleSquareHolder").offsetWidth;
+				divHeight = document.getElementById("circleSquareHolder").offsetHeight;
 				
 				document.getElementById("target").style.width = widthHeight;
 				document.getElementById("target").style.height = widthHeight;
-				document.getElementById("target").style.top = randomNumber(0, divHeight);
-				document.getElementById("target").style.left = randomNumber(0, divWidth);
+				document.getElementById("target").style.position = "relative";
+				document.getElementById("target").style.top = randomNumber(0, (divHeight - widthHeight));
+				document.getElementById("target").style.left = randomNumber(0, (divWidth - widthHeight));
 				
+				document.getElementById("target").style.borderRadius = squareOrCircle();
 				
-				
+				start = new Date().getTime();
+
 			}
 			
-			document.getElementById("target").onclick = instantiateShape();
+			document.getElementById("target").onclick = instantiateShape;
 			
 		</script>
 		
