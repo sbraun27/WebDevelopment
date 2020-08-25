@@ -1,0 +1,42 @@
+<html>
+
+	<head>
+
+		<title>Regular Expression</title>
+		<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+		
+		<style type="text/css">
+		
+		</style>
+		
+	</head>
+
+	<body>
+		
+		
+		<script type="text/javascript">
+		
+			var regex = /is/;
+			
+			var regex2 = /Great/i;
+			
+			var regex3 = /e/g;
+			
+			var string = "Regex is great!";
+			
+			var result = string.match(regex); //if no match, then returns null. Case sensitive.
+			var result2 = string.match(regex2); // case insensitive;
+			var result3 = string.match(regex3); // global flag
+			
+			
+			alert(result);
+			alert(result2);
+			alert(result3);
+			
+		</script>
+
+
+	</body>
+
+
+</html>
