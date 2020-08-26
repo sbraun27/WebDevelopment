@@ -1,0 +1,94 @@
+<html>
+
+	<head>
+
+		<title>jQuery</title>
+		<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+		
+		<script src = "jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
+		
+		<link href="jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+
+		<style>
+		
+			.listElement {
+				list-style-type: none;
+				margin: 0 3px 3px 3px;
+				padding: 0.4em;
+				padding-left: 1.5em;
+				font-size: 1.4em;
+				height: 18px;
+				width: 60%;
+				border: 1px solid black;
+			}
+			
+			#sortable: {
+				width: 200px;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+	
+		<div id="accordion">
+			<h3>Section 1</h3>
+			<div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus diam libero, ac tristique lorem congue a. Sed eu metus at neque finibus dictum. Mauris rutrum arcu lectus, accumsan pretium urna iaculis in. Mauris interdum hendrerit diam, ac lobortis nunc luctus vitae. Curabitur augue magna, eleifend a odio sagittis, consequat malesuada orci. Sed maximus ex quis lacus rhoncus tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec pretium ligula pharetra magna viverra, non ultricies orci congue. Vestibulum aliquet congue ipsum et imperdiet.
+				</p>
+			</div>
+			<h3>Section 2</h3>
+			<div>
+				<p>
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras luctus sapien in nisi luctus hendrerit. Phasellus bibendum vulputate nisl, et mattis mi imperdiet quis. Sed maximus quam eu ex commodo, eu dictum felis fringilla. Nunc nisi sem, posuere a pharetra sed, mollis nec elit. Quisque lectus leo, pretium quis ante quis, euismod auctor nisl. Mauris vitae vulputate turpis, id sodales dui. Suspendisse purus dui, pharetra eget fermentum vel, rhoncus ac dolor. Suspendisse mattis nisi ac purus interdum interdum. Donec quis nibh mi.
+				</p>
+			</div>
+			<h3>Section 3</h3>
+			<div>
+				<p>
+					Nam aliquam, nulla vel pellentesque pellentesque, nisi libero scelerisque risus, nec faucibus enim ligula id ex. Nam vel nibh orci. Mauris ut dolor nec enim sagittis viverra nec vitae nibh. Fusce molestie dignissim volutpat. Ut efficitur convallis est non pharetra. Suspendisse aliquet, ex eget fringilla sodales, elit dui lobortis arcu, molestie consectetur diam magna non sem. Aliquam vehicula vulputate ipsum, ut elementum nisi luctus sit amet. Donec non quam enim. Fusce hendrerit dui non blandit vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris purus ex, iaculis sit amet urna eu, aliquam faucibus eros. Etiam dapibus diam eu elit efficitur, tempor suscipit justo laoreet. Morbi vitae elit ut nulla pharetra tristique non et lectus. Quisque ac finibus quam. Quisque sit amet lectus ex. Cras quis nisi vel augue suscipit condimentum at quis mi.
+				</p>
+			</div>
+			<h3>Section 4</h3>
+			<div>
+				<p>
+					Cras blandit purus tristique, mollis lectus ac, consectetur justo. Proin tristique mi eget mauris sollicitudin luctus. Duis pulvinar pellentesque ultrices. Quisque in odio erat. Vestibulum vehicula, ipsum sit amet congue tempus, elit nulla aliquet elit, at gravida libero purus non sem. Nam vehicula eros quis est viverra mollis. Nam quis enim magna. Pellentesque tempus libero at imperdiet dignissim.
+				</p>
+			</div>			
+		</div>
+		
+		<ul id="sortable">
+			<li class="listElement">Item 1</li>
+			<li class="listElement">Item 2</li>
+			<li class="listElement">Item 3</li>
+			<li class="listElement">Item 4</li>
+			<li class="listElement">Item 5</li>
+			<li class="listElement">Item 6</li>
+			<li class="listElement">Item 7</li>
+			<li class="listElement">Item 8</li>
+		</ul>
+
+		<script type="text/javascript">
+		
+
+			$("#accordion").accordion();
+
+			
+
+			$("#sortable").sortable();
+			$("#sortable").disableSelection();
+
+			/*
+				Basic layout is:
+				<h3>Content</h3>
+				<div>Contents</div>
+			*/
+		</script>
+
+
+
+	</body>
+
+
+</html>
